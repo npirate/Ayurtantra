@@ -83,7 +83,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'sql_server.pyodbc',
         #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME': 'Training',
+        'NAME': 'Ayurtantra',
         'HOST': 'LTP232\SQLEXPRESS',
         'PORT': '',
         'USER': 'sa',
