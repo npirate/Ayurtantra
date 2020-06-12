@@ -81,9 +81,19 @@ WSGI_APPLICATION = 'ayurtantra_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'sql_server.pyodbc',
+        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'Training',
+        'HOST': 'LTP232\SQLEXPRESS',
+        'PORT': '',
+        'USER': 'sa',
+        'PASSWORD': '12345678',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 13 for SQL Server',
+            'unicode_results':True,
+        },
+
+    }    
 }
 
 

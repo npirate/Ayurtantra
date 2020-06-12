@@ -12,9 +12,9 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /code
 
 # Install dependencies
-# COPY Pipfile Pipfile.lock /code/
-#RUN cd /code/ && pip install pipenv && pipenv install --system
-RUN pip install django==2.2 && pip install django-crispy-forms && pip install gunicorn
+COPY Pipfile Pipfile.lock /code/
+RUN pip install pipenv && pipenv install --system
+#RUN pip install django==2.2 && pip install django-crispy-forms && pip install gunicorn
 
 # Copy project
 COPY . /code/
