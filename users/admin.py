@@ -11,6 +11,6 @@ class CustomUserAdmin (UserAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = CustomUser
-    list_display = ['email','username','age','is_staff',] #fields to display for user in the admin's user listing screen
+    list_display = ['username','email',] #fields to display for user in the admin's user listing screen
 
 admin.site.register(CustomUser, CustomUserAdmin)
