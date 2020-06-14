@@ -133,11 +133,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') #for production
-
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')] #file location for local env
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') #file location for production env   
+
+STATICFILES_FINDERS = [
+"django.contrib.staticfiles.finders.FileSystemFinder", #looks within staticfiles_dirs which is project level    
+"django.contrib.staticfiles.finders.AppDirectoriesFinder", #looks for dir named static within apps
+]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
