@@ -7,7 +7,7 @@
 
 
 {% block content %}
-<img class="bookcover" src="{% static 'images/Homepage.jpg' %}">
+<!--img class="bookcover" src="{% static 'images/Homepage.jpg' %}"-->
 <div class="jumbotron">
     <h1 class="display-4">Ayurtantra</h1>
     <p class="lead">A healthcare website built with Django.</p>
@@ -15,5 +15,12 @@
     <a class="btn btn-primary btn-lg" href="{% url 'patient_list' %}"
     role="button">View All Patients</a>
     </p>
+</div>
+<div>
+    {% for provider in provider_list %}
+    <div>
+        <h2><a href="">{{ provider.first_name }} {{ provider.last_name }}</a></h2>
+    </div>
+    {% endfor %}
 </div>
 {% endblock content %}

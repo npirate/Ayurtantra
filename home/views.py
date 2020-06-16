@@ -1,11 +1,13 @@
 from django.shortcuts import render
-
-from django.views.generic import TemplateView #where there is not interaction with model
+from providers.models import Provider
+from django.views.generic import TemplateView, ListView #where there is no interaction with model
 
 # Create your views here.
 
-class HomePageView (TemplateView):
+class HomePageView (ListView):
+    model = Provider
     template_name = 'home.html'
+    context_object_name = 'provider_list'
 
 class AboutUsView (TemplateView):
     template_name = 'about.html'

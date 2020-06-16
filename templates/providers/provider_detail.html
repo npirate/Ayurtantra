@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ provider.first_name }} {{ provider.last_name }} {% endblock title %}
+
+{% block content %}
+<div class="provider-detail">
+<h2>{{ provider.first_name }} {{ provider.last_name }}</h2>
+<p>Degree: BAMS, {{ provider.postgraduation_degree }}</p>
+<p>Gender: {{ provider.gender }}</p>
+<p>Mobile No.: {{ provider.mobile_no }}</p>
+<p><a href="">Book Appointment</a></p>
+</div>
+{% endblock content %}
