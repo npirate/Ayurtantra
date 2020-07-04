@@ -19,7 +19,7 @@
 <div>
     {% for provider in provider_list %}
     <div>
-        <h2><a href="">{{ provider.first_name }} {{ provider.last_name }}</a></h2>
+        <h2><a href="{{ provider.get_absolute_url }}">{{ provider.first_name }} {{ provider.last_name }}</a></h2>
     </div>
     {% endfor %}
 </div>

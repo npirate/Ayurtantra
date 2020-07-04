@@ -28,4 +28,4 @@ class Provider (models.Model):
         return self.first_name + ' ' + self.last_name
 
     def get_absolute_url (self):
-        return reverse('provider_detail', args=[str(self.id)]) #this is basically url for each entry in the model
+        return reverse('provider_profile', args=[str(self.profile_name)]) #this is basically url for each entry in the model

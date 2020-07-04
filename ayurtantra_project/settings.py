@@ -82,20 +82,21 @@ WSGI_APPLICATION = 'ayurtantra_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'sql_server.pyodbc',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME': 'Ayurtantra',
-        'HOST': 'LTP232\SQLEXPRESS',
-        'PORT': '',
-        'USER': 'sa',
-        'PASSWORD': '12345678',
-        'OPTIONS': {
-            'driver': 'ODBC Driver 13 for SQL Server',
-            'unicode_results':True,
+        'ENGINE': 'django.db.backends.sqlite3',
+        #'ENGINE': 'sql_server.pyodbc',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'NAME': 'Ayurtantra',
+        #'HOST': 'LTP232\SQLEXPRESS',
+        #'PORT': '',
+        #'USER': 'sa',
+        #'PASSWORD': '12345678',
+        #'OPTIONS': {
+        #    'driver': 'ODBC Driver 13 for SQL Server',
+        #    'unicode_results':True,
         },
 
     }    
-}
+
 
 
 # Password validation
@@ -155,4 +156,11 @@ LOGOUT_REDIRECT_URL = 'home'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' # new
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'ayurtantra.llc@gmail.com'
+EMAIL_HOST_PASSWORD = 'Giminulot143'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
